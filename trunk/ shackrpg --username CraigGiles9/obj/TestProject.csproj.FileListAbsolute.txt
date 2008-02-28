@@ -1,0 +1,11 @@
+D:\Programming\Visual Studio Projects\Visual C# 2005\TestProject\TestProject\bin\x86\Debug\TestProject.exe
+D:\Programming\Visual Studio Projects\Visual C# 2005\TestProject\TestProject\bin\x86\Debug\TestProject.pdb
+D:\Programming\Visual Studio Projects\Visual C# 2005\TestProject\TestProject\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Programming\Visual Studio Projects\Visual C# 2005\TestProject\TestProject\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Programming\Visual Studio Projects\Visual C# 2005\TestProject\TestProject\obj\x86\Debug\TestProject.obj.x86.Debug.Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Programming\Visual Studio Projects\Visual C# 2005\TestProject\TestProject\obj\x86\Debug\TestProject.exe
+D:\Programming\Visual Studio Projects\Visual C# 2005\TestProject\TestProject\obj\x86\Debug\TestProject.pdb
+D:\Programming\Visual Studio Projects\Visual C# 2005\TestProject\TestProject\bin\x86\Debug\Content\TitleScreen\Graphics\MenuBackground.xnb
+D:\Programming\Visual Studio Projects\Visual C# 2005\TestProject\TestProject\bin\x86\Debug\Content\TitleScreen\Graphics\MenuTitleScreen.xnb
+D:\Programming\Visual Studio Projects\Visual C# 2005\TestProject\TestProject\bin\x86\Debug\Content\MainGame\Graphics\TestTiles2.xnb
+D:\Programming\Visual Studio Projects\Visual C# 2005\TestProject\TestProject\bin\x86\Debug\Content\MainGame\Graphics\Hero.xnb
