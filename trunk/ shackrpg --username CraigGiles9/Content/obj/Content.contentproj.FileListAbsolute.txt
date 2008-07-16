@@ -1,1 +1,0 @@
-D:\Programming\Visual Studio Projects\Visual C# 2005\TestProject\TestProject\Content\obj\x86\Debug\ResolveAssemblyReference.cache
