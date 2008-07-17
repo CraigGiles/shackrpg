@@ -21,16 +21,5 @@ namespace ShackRPG
             }
         }
 
-        /// <summary>
-        /// Matrix used in map editor for drawing the UI overlay
-        /// </summary>
-        public Matrix MapEditorTransformMatrix
-        {
-            get
-            {
-                return Matrix.CreateTranslation(new Vector3(Position, 0f));
-            }
-        }
-
     }//end Camera Class
 }
