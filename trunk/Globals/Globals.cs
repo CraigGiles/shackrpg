@@ -14,25 +14,41 @@ namespace ShackRPG
         /// </summary>
         public static BaseGame Game;
 
+
         /// <summary>
         /// Content Manager
         /// </summary>
         public static ContentManager Content;
+
 
         /// <summary>
         /// SpriteBatch
         /// </summary>
         public static SpriteBatch SpriteBatch;
 
+
         /// <summary>
         /// Sprite Font
         /// </summary>
         public static SpriteFont Font;
 
+
         /// <summary>
         /// Game Screen Manager
         /// </summary>
         public static ScreenManager ScreenManager;
+
+
+        /// <summary>
+        /// Audio Manager
+        /// </summary>
+        public static AudioManager AudioManager;
+
+
+        /// <summary>
+        /// Tile Engine
+        /// </summary>
+        public static TileEngine TileEngine;
 
 
         /// <summary>
@@ -61,12 +77,14 @@ namespace ShackRPG
             Content = content;
             SpriteBatch = batch;
 
+            //creates audio manager
+            AudioManager = new AudioManager(
+                "Content\\Audio\\ShackAudio.xgs",
+                "Content\\Audio\\Wave Bank.xwb",
+                "Content\\Audio\\Sound Bank.xsb");
+
             //input any extra created global objects here
             Font = content.Load<SpriteFont>(@"Courier New");
-
-            //Starts up the screen manager
-            ScreenManager = new ScreenManager();
-            ScreenManager.Initialize(new GameMenu());
 
             //Sets up the games Input
             Input = new Input();
@@ -74,8 +92,11 @@ namespace ShackRPG
             //Creates game camera
             Camera = new Camera();
 
-            //TileEngine tileEngine = new TileEngine();
-            
+            TileEngine = new TileEngine();
+
+            //Starts up the screen manager
+            ScreenManager = new ScreenManager();
+            ScreenManager.Initialize(new StartMenu());
 
         }//end PopulateGlobals()
     

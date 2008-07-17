@@ -31,6 +31,12 @@ namespace ShackRPG
 
 
         /// <summary>
+        /// List of screens needing to be drawn
+        /// </summary>
+        List<GameScreen> screensToDraw = new List<GameScreen>();
+
+
+        /// <summary>
         /// List of screens to be removed from the stack
         /// </summary>
         List<GameScreen> screensToRemove = new List<GameScreen>();
@@ -135,6 +141,9 @@ namespace ShackRPG
 
         public void Update(GameTime gameTime)
         {
+            //Update audio engine
+            Globals.AudioManager.Update(gameTime);
+
             //Clears any screens removed from game
             ClearRemovedScreens();
 
@@ -148,15 +157,19 @@ namespace ShackRPG
             foreach (GameScreen screen in screens)
             {
                 screensToUpdate.Add(screen);
+            }
+
+            //reverses so we're updating "top down"
+            screensToUpdate.Reverse();
+
+            //updates all screens until reaching a "BlocksUpdate"
+            foreach (GameScreen screen in screensToUpdate)
+            {
+                screen.Update(gameTime);
 
                 if (screen.BlocksUpdate)
                     break;
-
             }
-
-            //updates all screens
-            foreach (GameScreen screen in screensToUpdate)
-                screen.Update(gameTime);
         }
 
 
@@ -165,18 +178,26 @@ namespace ShackRPG
 
         #region Draw Screens
 
-
         public void Draw(GameTime gameTime)
         {
+            //populate screensToDraw list
             foreach (GameScreen s in screens)
             {
-                //draws gamescreen
-                s.Draw(gameTime);
+                screensToDraw.Add(s);
+            }
 
-                //if gamescreen blocks draw, break.
-                if (s.BlocksDraw)
+            //reverse list to draw "Top Down"
+            screensToDraw.Reverse();
+
+            //draws all screens until reaching a 'block draw'
+            foreach (GameScreen screen in screensToDraw)
+            {
+                screen.Draw(gameTime);
+
+                if (screen.BlocksDraw)
                     break;
-            }//end foreach
+            }
+        
 
         }
 
@@ -189,7 +210,11 @@ namespace ShackRPG
 
 
             //initialize counter
-            int count = 1;
+            int count = 2;
+            Globals.SpriteBatch.DrawString(Globals.Font,
+                "Active Screens:",
+                new Vector2(5, 20),
+                Color.Yellow);
 
             //loop through game screens, drawing each name
             foreach (GameScreen screen in screens)

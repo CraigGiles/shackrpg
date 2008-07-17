@@ -36,6 +36,18 @@ namespace ShackRPG
             if (currentState.Buttons.Y == ButtonState.Pressed)
                 previousButtonsPressed.Add(Buttons.Y);
 
+            if (currentState.Buttons.Start == ButtonState.Pressed)
+                previousButtonsPressed.Add(Buttons.Start);
+
+            if (currentState.Buttons.Back == ButtonState.Pressed)
+                previousButtonsPressed.Add(Buttons.Back);
+
+            if (currentState.Buttons.LeftShoulder == ButtonState.Pressed)
+                previousButtonsPressed.Add(Buttons.LeftShoulder);
+
+            if (currentState.Buttons.RightShoulder == ButtonState.Pressed)
+                previousButtonsPressed.Add(Buttons.RightShoulder);
+
             if (currentState.DPad.Down == ButtonState.Pressed)
                 previousButtonsPressed.Add(Buttons.DPadDown);
 
@@ -47,9 +59,7 @@ namespace ShackRPG
 
             if (currentState.DPad.Right == ButtonState.Pressed)
                 previousButtonsPressed.Add(Buttons.DPadRight);
-
-
-
+            
             previousState = currentState;
             currentState = GamePad.GetState(PlayerIndex.One);
         }
